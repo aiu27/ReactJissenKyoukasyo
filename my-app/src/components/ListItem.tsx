@@ -1,18 +1,17 @@
 import React from "react";
+import type { FC } from "react";
+import { User } from "../types/user";
 import { css } from "@emotion/react";
 
-type User = {
-  id: number;
-  name: string;
-  age: number;
-  personalColor: string;
-};
-
-export const ListItem = (props: User) => {
+export const ListItem: FC<User> = (props) => {
   const { id, name, age, personalColor } = props;
   return (
     <p style={{ color: personalColor }}>
       {id}:{name}({age})
     </p>
   );
+};
+
+ListItem.defaultProps = {
+  personalColor: "gray",
 };
