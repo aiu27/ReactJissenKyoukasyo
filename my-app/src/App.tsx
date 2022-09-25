@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ListItem } from "./components/ListItem";
+import { User } from "./types/user";
 // import axios from "axios";
 // import type { User } from ".type/user";
-
-type User = {
-  id: number;
-  name: string;
-  age: number;
-  personalColor: string;
-};
 
 export const App = () => {
   const [users, setUsers] = useState<User[]>([
